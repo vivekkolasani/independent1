@@ -7,3 +7,7 @@
 2) In the "docker-compose.yml", the flask app is listening on port no 80 according to flaskapp.conf. But the port number was not in      order in the yml file. Changed the ports accordingly.
     "8080:80"
     
+3) In the yml file, local folder where the data need to be stored is specified incorrectly.
+   "data" -> "./data"
+   
+4) Included "restart:always" just to makee sure the system wont shutdown if the postgresql doesnt start.
