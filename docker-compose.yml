@@ -3,12 +3,13 @@ services:
   db:
     image: "postgres:9.6.5"
     volumes:
-      - "dbdata:/var/lib/postgresql/data"
+      - ./dbdata:/var/lib/postgresql/data
     env_file:
       - env_file
     networks:
       - db_network
   flaskapp:
+    restart: always
     build: .
     env_file:
       - env_file
